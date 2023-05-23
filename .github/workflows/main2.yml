@@ -3,6 +3,7 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
+    runs-on: self-hosted
     name: A job to say hello
     steps:
       - uses: actions/checkout@v2
@@ -11,6 +12,5 @@ jobs:
         with:
           who-to-greet: 'Mona the Octocat'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
-      
-      -run: self-hosted
+       
         shell: bash
